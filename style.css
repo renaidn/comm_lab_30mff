@@ -1,0 +1,544 @@
+/*--------------------------IMPORT FONTS-------------*/
+
+@font-face {
+	font-family: mainFont;
+	src: url(fonts/main_font.otf);
+}
+@font-face {
+	font-family: boldFont;
+	src: url(fonts/main_font_bold.ttf);
+}
+@font-face {
+	font-family: menuFont;
+	src: url(fonts/menu_font.ttf);
+}
+@font-face {
+	font-family: blackFont;
+	src: url(fonts/main_font_black.ttf);
+}
+@font-face {
+	font-family: boldItalicFont;
+	src: url(fonts/main_font_bold_italic.ttf);
+}
+
+/*--------------------------GENERAL INITIAL SETTINGS-------------*/
+
+html {
+	scroll-behavior: smooth; 	/*for smooth scroll down when opening the synopsis container*/
+}
+body {
+	background-color: #0a100d; 
+	margin: 0;
+	padding: 0;
+}
+footer {
+	/*initially i set all of the sizes in px, but then changed to vw for responsiveness*/
+	/*keeping the px sizes just in case*/
+	height: 2.604vw; 			/*height: 40px;*/
+}
+p {
+	color: #d6d5c9;
+	font-family: menuFont;
+}
+a {
+	text-decoration: none;
+	display: inline;
+	color: #b9baa3;
+}
+/*special background for the index page*/
+.index-page {
+	background-image: url(images/background.png);
+	background-size: cover;
+}
+/*special background for the film page*/
+#film-page {
+	background-image: url(images/background-film.png);
+	background-size: cover;
+}
+/*change special background properties if screen width < 1200px*/
+@media only screen and (max-width: 1200px) {
+	.index-page {
+		background-image: url(images/background-mobile.png);
+		background-size: contain;
+		width: 100%;
+		height: auto;
+		background-repeat: no-repeat;
+	}
+	#film-page {
+		background-size: contain;
+		width: 100%;
+		height: auto;
+		background-repeat: no-repeat;
+	}
+}
+
+/*--------------------------FOR NAVIGATION-------------*/
+
+#menu {
+	 width: auto;
+     font-size: 30px;
+     font-size: 1.953vw;
+     text-align: left;
+     font-family: menuFont;
+     padding: 0;
+     margin: 0;
+}
+.nav-bar {
+	height: 4.557vw;							/*height: 70px;*/
+	line-height: 4.557vw;						/*line-height: 70px;*/
+	padding: 1.302vw 0;							/*padding: 20px 0;*/
+}
+.nav-bar li {
+	display:inline;
+}
+.nav-bar li a {
+  	color: #d6d5c9;
+  	display: inline-block;
+  	vertical-align: bottom;						/*aligns the text in navigation at the vertical center of the image*/
+  	padding: 0 2.604vw;							/*padding: 0 40px;*/
+	transition-duration: 0.3s;  				/*for smooth transition when hovered over*/
+}
+.nav-bar li a:hover {							/*links hover settings*/
+	color: #ec061d;
+	font-size: 3.255vw; 						/*font-size: 50px;*/
+	font-family: boldFont;	
+}
+#logo {
+	display: inline-block;
+	transition-duration: 0.3s;	
+	height: 4.557vw; 							/*height: 70px;*/
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;						/*take borders and paddings into account when counting element width & height*/
+}
+
+/*--------------------------FILM PAGE-------------*/
+
+iframe {
+	display: block;
+	margin: 0 auto; 
+	height: 32.227vw; 							/*height: 495px;*/
+	width: 57.292vw; 							/*width: 880px;*/
+	border: 0.065vw solid #b9baa3; 				/*border: 1px solid #b9baa3;*/
+}
+.film-main-body p {
+	text-align: center;
+	margin: 2.604vw 0 3.255vw 0; 				/*margin: 40px 0 50px 0;*/
+	font-size: 1.302vw; 						/*font-size: 20px;*/
+	padding: 0;
+}
+.button-container {
+	text-align: center;
+}
+.synopsis-button {
+	font-family: boldFont;
+	margin: 1.953vw 0;							/*margin: 30px 0;*/
+	font-size: 1.953vw; 						/*font-size: 30px;*/
+	background-color: #ec061d;
+	border: none;
+	padding: 0.326vw 1.302vw; 					/*padding: 5px 20px;*/
+	color: #d6d5c9;
+   	box-shadow: inset 0 0 0 0.065vw #d6d5c9; 	/*box-shadow: inset 0px 0px 0px 1px #d6d5c9;*/ /*inset -> inside container shadow*/
+	transition-duration: 0.3s;	
+}
+.synopsis-button:hover {
+   	box-shadow: inset 0 0 0 0.195vw #ec061d; 	/*box-shadow: inset 0px 0px 0px 3px #ec061d;*/
+   	background-color: #d6d5c9;
+   	color: #ec061d;
+   	cursor: pointer;
+}
+#synopsis-container {
+	display: none;
+	text-align: center;
+	box-sizing: border-box;
+	padding: 1.953vw; 							/*padding: 30px;*/
+	margin: 1.302vw 20.768vw; 					/*margin: 20px 319px;*/
+	background-color: #d6d5c9;
+	border: 0.065vw solid #a22c29; 				/*border: 1px solid #a22c29;*/
+	color: #0a100d;
+	font-family: menuFont;
+	font-size: 1.302vw; 						/*font-size: 20px;*/
+}
+#footer-film {
+	height: 4.688vw; 							/*height: 72px;*/
+	display: none;
+}
+
+/*--------------------------INDEX PAGE-------------*/
+
+.eyeline {
+	width: 100%;
+	text-align: center;
+	padding-top: 0.651vw; 						/*padding-top: 10px;*/
+}
+.eye {
+  	width: 42.318vw; 							/*width: 650px;*/
+  	height: 22.786vw; 							/*height: 350px;*/
+  	background: #d6d5c9;
+  	display: inline-block; 						/*inline-block allows to set width & height, top & bottom margins, and doesn't add a line break after the element*/
+  	margin: 3.255vw; 							/*margin: 50px;*/
+  	border-radius: 50%; 						/*make the shape circular*/
+  	position: relative;							/*to pose the iris relatively to the eye*/
+  	overflow: hidden; 							/*hide if iris goes beyond the eyeball*/
+}
+.iris {
+  	width: 9.766vw; 							/*width: 150px;*/
+  	height: 20.182vw; 							/*height: 310px;*/
+  	background: #0a100d;
+  	position: absolute;							/*to pose the iris relatively to the eye*/
+  	top: 50%; 									/*for initial position in the middle of the eye*/
+  	left: 50%; 									/*for initial position in the middle of the eye*/
+  	transform: translate(-50%,-50%); 			/*for initial position in the middle of the eye*/
+  	border-radius: 50%; 						/*make it circular*/
+}
+
+/*--------------------------REVIEW PAGE-------------*/
+
+.review-body {
+	margin: 2.604vw 5.208vw; 					/*margin: 40px 80px;*/
+}
+#review-page-num {
+	font-family: blackFont;
+	font-size: 7.161vw; 						/*font-size: 110px*/
+	display: inline;
+	vertical-align: text-bottom; 				/*vertically center the number relatively to the cat image*/
+	margin: 1.628vw; 							/*margin: 25px;*/
+}
+.review-page-head {
+	font-family: boldFont;
+	color: #d6d5c9;
+	font-size: 2.604vw; 						/*font-size: 40px;*/
+	padding: 0;
+	margin: 0;
+}
+.reviewImg {
+	height: 7.813vw; 							/*height: 120px;*/
+	display: inline;
+}
+.critic-box {
+	margin: 4.557vw 0; 							/*margin: 70px 0;*/
+}
+.critic-box p:nth-child(1) { 					/*review author styling*/ /*nth-child(n) is used to refer exclusively to the nth element of a tag*/
+	width: 32.552vw; 							/*width: 500px;*/
+	display: block;
+	font-size: 1.628vw; 						/*font-size: 25px;*/
+	font-family: boldItalicFont;
+	border: 0.065vw solid #b9baa3; 				/*border: 1px solid #b9baa3;*/
+	padding: 0 0.456vw; 						/*padding: 0 7px;*/
+	margin: 0.195vw 0; 							/*margin: 3px 0;*/
+}
+.critic-box p:nth-child(2) { 					/*review content styling*/
+	width: 78.125vw; 							/*width: 1200px;*/
+	height: 5.208vw; 							/*height: 80px;*/
+	font-size: 1.302vw; 						/*font-size: 20px;*/
+	font-family: menuFont;
+	display: inline-block;
+	padding: 0.456vw; 							/*padding: 7px;*/
+	margin: 0;
+	border: 0.065vw solid #b9baa3; 				/*border: 1px solid #b9baa3;*/
+}
+.critic-box p:nth-child(3) { 					/*review rating styling*/
+	display: inline-block;
+	padding: 0 1.302vw; 						/*padding: 0 20px;*/
+	margin: 0;
+	font-size: 4.883vw; 						/*font-size: 75px;*/
+	box-sizing: border-box;
+	font-family: blackFont;
+	color: #0a100d;
+	border: 0.065vw solid #b9baa3; 				/*border: 1px solid #b9baa3;*/
+	vertical-align: bottom;
+}
+.rating-container {
+	width: 67.708vw; 							/*width: 1040px;*/
+	display: inline-block;
+	margin-left: 1.628vw; 						/*margin-left: 25px;*/
+}
+.rating-bar-box {
+	width: 100%;
+	margin: 1.302vw 0; 							/*margin: 20px 0;*/
+	font-size: 1vw;
+}
+.rating-bar-box p {
+	text-transform: uppercase; 					/*make text uppercase*/
+	margin: 0 0 0.651vw; 						/*margin: 0 0 10px;*/
+	padding: 0;
+	display: block;
+}
+.rating-bar {
+	background: #464535;
+	display: flex;
+	color: #d6d5c9;
+	font-family: menuFont;
+	line-height: 0.651vw; 						/*line-height: 10px;*/
+	height: 0.651vw; 							/*height: 10px;*/
+}
+.rating-bar span {
+	padding: 0 0.326vw; 						/*padding: 0 5px;*/
+}
+.rating-level {
+	background: #3DA044;
+	width: 0;
+	height: 0.651vw; 							/*height: 10px;*/
+	line-height: 0.651vw; 						/*line-height: 10px;*/
+	text-align: right;
+	color: #0a100d;
+}
+.review-button {
+	font-family: boldFont;
+	font-size: 1.302vw; 						/*font-size: 20px;*/
+	background-color: #d6d5c9;
+	border: none;
+	padding: 0.326vw 1.302vw; 					/*padding: 5px 20px;*/
+	color: #0a100d;
+   	box-shadow: inset 0 0 0 0.065vw #ec061d; 	/*box-shadow: inset 0px 0px 0px 1px #ec061d;*/
+	transition-duration: 0.3s;	
+}
+.review-button:hover {
+   	box-shadow: inset 0 0 0 0.195vw #ec061d; 	/*box-shadow: inset 0px 0px 0px 3px #ec061d;*/
+   	background-color: #d6d5c9;
+   	color: #ec061d;
+   	cursor: pointer;
+}
+
+/*--------------------------CREDITS PAGE-------------*/
+
+.credits-text {
+	font-size: 1.953vw; 						/*font-size: 30px;*/
+	margin: 3vw;
+	text-align: center;
+}
+.credits-content {
+	margin: 10vw auto;
+}
+.credits-text p:nth-child(1) { 					/*category styling*/
+	color: #d6d5c9;
+	font-family: boldItalicFont;
+	font-size: 1.953vw;
+	display: inline;
+}
+.credits-text p:nth-child(2) { 					/*category content styling*/
+	display: inline;
+}
+.credits-text a {
+	text-decoration: underline;
+}
+
+/*--------------------------BACKSTAGE PAGE-------------*/
+
+.backstage-body {
+	display: flex;
+	flex-wrap: wrap;
+	margin: 1.302vw 14.974vw; 					/*margin: 20px 230px;*/
+}
+.gallery-item {
+	position: relative;
+	overflow: hidden; 							/*hide excess parts of the image that are not fitting in the container*/
+	border: 0.065vw solid #b9baa3; 				/*border: 1px solid #b9baa3;*/
+	margin: 1.302vw; 							/*margin: 20px;*/
+}
+.gallery-img {
+	display: block;
+	object-fit: cover;
+	height: 19.531vw; 							/*height: 300px;*/
+	width: 19.531vw; 							/*width: 300px;*/
+	transition: transform 0.4s ease-out;
+	cursor: pointer;
+}
+.gallery-img:hover {
+	transform: scale(1.2); 						/*scale up the image in container if hover*/
+}
+.modal-win {
+  	display: none;
+  	position: fixed; 							/*let modal window stay in one place*/
+  	z-index: 1; 								/*specify the stack order of the element, push to the front*/
+  	padding-top: 7.161vw; 						/*padding-top: 110px;*/
+  	left: 0;
+  	top: 0;
+  	width: 100%;
+  	height: 100%; 
+  	background-color: rgba(0,0,0,0.9);			/*dim the background of the modal window*/
+}
+.modal-content {
+  	position: relative;							/*position lightbox relatively to the modal window*/
+  	margin: auto;
+  	box-sizing: border-box;
+  	width: 60%;
+  	height: 70%;
+  	overflow: hidden;
+}
+.lightbox {
+	position: absolute; 						/*position lightbox relatively to the modal window*/
+	padding: 0;
+	margin: 0;
+  	display: none;
+}
+.lightbox img {
+	width: 59.245vw; 							/*width: 910px;*/
+	height: 35.807vw; 							/*height: 550px;*/
+	object-fit: contain;						/*fit the image into container fully with keeping the dimensions*/
+	transition: 0.6s ease;
+}
+.prev-img,
+.next-img {
+  	cursor: pointer;
+  	position: absolute;
+  	top: 50%;
+  	width: auto;
+  	padding: 1.042vw; 							/*padding: 16px;*/
+  	margin-top: -3.255vw; 						/*margin-top: -50px;*/
+  	color: #d6d5c9;
+  	font-size: 2.930vw; 						/*font-size: 45px;*/
+  	transition-duration: 0.3s;
+}
+.next-img {
+  	right: 0; 									/*place at the right end of the container*/
+}
+.prev-img:hover,
+.next-img:hover {
+	color: #ec061d;
+}
+.overlay-text {
+  	position: absolute;
+  	bottom: 0;
+  	background: rgba(162, 44, 41, 0.7); 		/*red see-through */
+  	color: #f1f1f1;
+  	width: 100%;
+  	transition: .5s ease;
+  	opacity:0; 									/*not visible by default*/
+  	color: white;
+  	font-family: boldItalicFont;
+  	font-size: 1.302vw; 						/*font-size: 20px;*/
+  	padding: 0.651vw; 							/*padding: 10px;*/
+}
+.gallery-item:hover .overlay-text {
+  	opacity: 1; 								/*make overlay text visible*/
+}
+
+/*--------------------------MOBILE NAVIGATION-------------*/
+
+.nav-mobile {
+	display: none; 								/*not display the mobile navigation*/
+	position: relative;							/*make navigation icon relative to the general navigation*/
+	overflow: hidden;							/*hide what goes beyond the navigation container*/
+  	background-color: #0a100d;
+}
+#menu-mobile {
+	display: none;								/*not display the dropdown navigation*/
+}
+.nav-mobile a{
+	color: #d6d5c9;
+  	padding: 2vw;
+  	text-decoration: none;
+  	font-size: 5vw;
+  	font-family: menuFont;
+  	display: block;
+  	border: 0.065vw solid #b9baa3; 
+}
+.nav-mobile a#nav-icon {
+	border: none;
+  	display: block;
+  	position: absolute;
+  	right: 0;									/*position at the right end of container*/
+  	top:0;
+  	color: #d6d5c9;
+  	line-height: 10vw;
+  	height: 10vw;
+  	font-size: 10vw;
+ 	margin: 2vw;
+  	transition-duration: 0.3s;
+}
+
+/*--------------------------MOBILE SIZE RESPONSIVENESS-------------*/
+
+@media only screen and (max-width: 970px) { 	/*if screen width less than 970px - change these parameters*/
+	#menu {
+	display: none;								/*not display the default navigation bar*/
+	}
+	.nav-mobile {
+  		display: block;							/*display the mobile navigation bar*/
+	}
+	#logo {
+		height: 10vw;
+		margin: 2vw;
+	}
+	.eyeline {
+		display: none; 							/*not show the cats eyes, will be shown in a background image instead*/
+	}
+	/*generally, I have just increased the font-size and decreased the margins*/
+	.rating-bar, .rating-level {
+		height: 2vw;
+		line-height: 2vw;
+	}
+	.rating-bar-box {
+		font-size: 2vw;
+	}
+	.rating-container {
+		padding-left: 2vw;
+		width: 52vw;
+		margin: auto;
+	}
+	.review-body {
+		padding-top: 3vw;
+	}
+	.reviewImg {
+		height: 15vw;
+		margin: auto;
+	}
+	#review-page-num {
+		font-size: 15vw;
+		margin: auto;
+	}
+	.review-page-head {
+		font-size: 4vw;
+	}
+	.critic-box p:nth-child(1){
+		font-size: 2.8vw;
+	}
+	.critic-box p:nth-child(2) {
+		font-size: 2vw;
+		height: 10.25vw;
+		width: 67vw;
+		padding: 1.8vw;
+	}
+	.critic-box p:nth-child(3) {
+		font-size: 11vw;
+	}
+	.review-button {
+		font-size: 3vw;
+		margin: 3vw;
+	}
+	.backstage-body {
+		margin: 4vw;
+	}
+	.gallery-img {
+		width: 40vw;
+		height: 40vw;
+	}
+	.gallery-item {
+		margin: 2vw;
+	}
+	.overlay-text {
+		font-size: 4vw;
+		opacity: 1;
+	}
+	.credits-text p:nth-child(1) {
+		font-size: 4vw;
+	}
+	.credits-text p:nth-child(2) {
+		font-size: 4vw;
+	}
+	iframe {
+		width: 90%;
+		height: 60vw;
+		margin: 3vw auto;
+	}
+	.synopsis-button {
+		font-size: 4vw;
+		padding: 1vw 2vw;
+	}
+	#synopsis-container {
+		font-size: 4vw;
+		padding: 2vw;
+		margin: 3vw 5vw;
+	}
+}

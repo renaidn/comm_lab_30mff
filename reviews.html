@@ -1,0 +1,112 @@
+<html>
+	<head>
+		<title>30mff - reviews</title>
+		<link rel="stylesheet" href="style.css"/> 																			<!--connect to css-->
+		<link rel="shortcut icon" type="image/png" href="images/favicon.png"/> 												<!--website icon-->
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> 	<!--import mobile navigation icon-->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"> 												<!--for site responsiveness-->
+	</head>
+	<body onload="ratingBarLoad()"> <!--LOAD THE RATING BAR ON THE LOAD OF THE BODY-->
+		<!--DEFAULT NAVIGATION BAR--> 
+		<nav id="menu">	
+			<ul class="nav-bar">
+	 			<li><a href="index.html"><img src="images/logo.png" id="logo"/></a></li>
+	  			<li><a href="film.html">Film</a></li>
+	  			<li><a href="backstage.html">Backstage</a></li>
+	  			<li><a href="reviews.html">Reviews</a></li>
+	  			<li><a href="credits.html">Credits</a></li>
+  			</ul>
+		</nav>
+		<!--MOBILE NAVIGATION BAR-->
+		<div class="nav-mobile"> 
+			<a href="index.html"><img src="images/logo.png" id="logo"/></a>
+			<div id="menu-mobile">
+		  		<a href="film.html">Film</a>
+		  		<a href="backstage.html">Backstage</a>
+		  		<a href="reviews.html">Reviews</a>
+		  		<a href="credits.html">Credits</a>
+		  	</div>
+		  	<a href="#" id="nav-icon" onclick="showMobileMenu()"><i class="fa fa-bars"></i></a>
+	  	</div>
+	  	<!--MAIN BODY-->
+		<div class="review-body">
+			<!--HEADING 1 - OVERALL CRITICS SCORE-->
+			<p class="review-page-head" style="margin-bottom: 30px">Overall Critics Score</p>
+			<!--CAT IMAGE-->
+			<img src="images/cat-sil.png" class="reviewImg"/>
+			<!--OVERALL RATING SCORE-->
+			<p id="review-page-num">60</p>
+			<!--RATING BARS-->
+			<div class="rating-container">
+				<!--POSITIVE RATING BAR-->
+				<div class="rating-bar-box">
+					<div class="rating-bar">
+						<!--RATING LEVEL-->
+						<div id="rating-positive" class="rating-level" style="background: #70e000"></div>	<!--COLOR:GREEN-->
+						<!--RATING LEVEL INDEX-->
+						<span>60</span>
+					</div>
+					<!--RATING LEVEL TEXT-->
+					<p>positive</p>
+				</div>
+				<!--MIXED RATING BAR-->
+				<div class="rating-bar-box">
+					<div class="rating-bar">
+						<!--RATING LEVEL-->
+						<div id="rating-mixed" class="rating-level" style="background: #d4d700"></div> 		<!--COLOR:YELLOW-->
+						<!--RATING LEVEL INDEX-->
+						<span>35</span>
+					</div>
+					<!--RATING LEVEL TEXT-->
+					<p>mixed</p>
+				</div>
+				<!--NEGATIVE RATING BAR-->
+				<div class="rating-bar-box">
+					<div class="rating-bar">
+						<!--RATING LEVEL-->
+						<div id="rating-negative" class="rating-level" style="background: #D45113"></div> 	<!--COLOR:RED-->
+						<!--RATING LEVEL INDEX-->
+						<span>5</span>
+					</div>
+					<!--RATING LEVEL TEXT-->
+					<p>negative</p>
+				</div>
+			</div>
+			<!--HEADING 2 - CRITIC REVIEWS-->
+			<p class="review-page-head" style="margin-top: 50px;">Critic Reviews</p>
+			<!--REVIEW CONTAINER-->
+			<div class="critic-box" style="margin-top: 45px">
+				<!--AUTHOR-->
+				<p>New York Times</p>
+				<!--REVIEW TEXT-->
+				<p>"Sinisterly superb, this is a well-crafted, phenomenally acted, artistically drenched triumph that's a whole lot more responsible than most other friendship centered films." <a href="https://www.commonsensemedia.org/movie-reviews/cruella" target="_blank"> Read more... </a></p>
+				<!--RATING NUMBER-->
+				<p style="background: #70e000">88</p>
+			</div>
+			<!--REVIEW CONTAINER-->
+			<div class="critic-box">
+				<!--AUTHOR-->
+				<p>San Francisco Times</p>
+				<!--REVIEW TEXT-->
+				<p>"Although this film is not for me and struggles to hit 5/10, the 10-year-old I saw it with was so tickled by it and explicitly instructed me to note in this review that they give it a 7/10. So in the spirit of democracy, a 6/10 it is" <a href="https://www.abc.net.au/radio/programs/nightlife/alex/13369942" target="_blank"> Read more... </a></p>
+				<!--RATING NUMBER-->
+				<p style="background: #d4d700">60</p>
+			</div>
+			<!--REVIEW CONTAINER-->
+			<div class="critic-box">
+				<!--AUTHOR-->
+				<p>London Times</p>
+				<!--REVIEW TEXT-->
+				<p>"It feels like every single person working on this movie didn't have the time to do their job. Nothing looks thought out properly, lots of things are lacking. Tasteless." <a href="#" target="_blank"> Read more... </a></p>
+				<!--RATING NUMBER-->
+				<p style="background: #D45113">25</p>
+			</div>
+			<!--SHOW MORE REVIEWS BUTTON-->
+			<div class="button-container">
+				<button class="review-button" onclick="showMoreReviews()">show more</button>
+			</div>
+		</div>
+		<script src="script.js"></script> 	<!--CONNECT TO JAVASCRIPT FILE-->
+	</body>
+	<footer></footer>
+</html>

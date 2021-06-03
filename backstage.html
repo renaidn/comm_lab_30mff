@@ -1,0 +1,102 @@
+<html>
+	<head>
+		<title>30mff - backstage</title>
+		<link rel="stylesheet" href="style.css"/> 																			<!--connect to css-->
+		<link rel="shortcut icon" type="image/png" href="images/favicon.png"/> 												<!--website icon-->
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> 	<!--import mobile navigation icon-->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"> 												<!--for site responsiveness-->
+	</head>
+	<body>
+		<!--DEFAULT NAVIGATION BAR--> 
+		<nav id="menu">	
+			<ul class="nav-bar">
+	 			<li><a href="index.html"><img src="images/logo.png" id="logo"/></a></li>
+	  			<li><a href="film.html">Film</a></li>
+	  			<li><a href="backstage.html">Backstage</a></li>
+	  			<li><a href="reviews.html">Reviews</a></li>
+	  			<li><a href="credits.html">Credits</a></li>
+  			</ul>
+		</nav>
+		<!--MOBILE NAVIGATION BAR-->
+		<div class="nav-mobile"> 
+			<a href="index.html"><img src="images/logo.png" id="logo"/></a>
+			<div id="menu-mobile">
+		  		<a href="film.html">Film</a>
+		  		<a href="backstage.html">Backstage</a>
+		  		<a href="reviews.html">Reviews</a>
+		  		<a href="credits.html">Credits</a>
+		  	</div>
+		  	<a href="#" id="nav-icon" onclick="showMobileMenu()"><i class="fa fa-bars"></i></a>
+	  	</div>
+	  	<!--BACKSTAGE IMAGES-->
+		<div class="backstage-body">
+			<!--IMAGE 1 CONTAINER-->
+			<div onclick="loadImageFromGallery(1);currentImg(1)" class="gallery-item">			
+				<img class="gallery-img" src="images/backstage/1.jpg" alt="ooh fish eye lens"/>
+				<div class="overlay-text">ooh fish eye lens</div>
+			</div>
+			<!--IMAGE 2 CONTAINER-->
+			<div onclick="loadImageFromGallery(2);currentImg(2)" class="gallery-item">			
+				<img class="gallery-img" src="images/backstage/2.jpg" alt="friends portrait"/>
+				<div class="overlay-text">friends portrait</div>
+			</div>
+			<!--IMAGE 3 CONTAINER-->
+			<div onclick="loadImageFromGallery(3);currentImg(3)" class="gallery-item">			
+				<img class="gallery-img" src="images/backstage/3.jpg" alt="picnic vibes"/>
+				<div class="overlay-text">picnic vibes</div>
+			</div>
+			<!--IMAGE 4 CONTAINER-->
+			<div onclick="loadImageFromGallery(4);currentImg(4)" class="gallery-item">			
+				<img class="gallery-img" src="images/backstage/4.jpg" alt="some exercise"/>
+				<div class="overlay-text">some exercise</div>
+			</div>
+			<!--IMAGE 5 CONTAINER-->
+			<div onclick="loadImageFromGallery(5);currentImg(5)" class="gallery-item">			
+				<img class="gallery-img" src="images/backstage/5.jpg" alt="lunch time"/>
+				<div class="overlay-text">lunch time</div>
+			</div>
+			<!--IMAGE 6 CONTAINER-->
+			<div onclick="loadImageFromGallery(6);currentImg(6)" class="gallery-item">			
+				<img class="gallery-img" src="images/backstage/6.jpg" alt="beach walk"/>
+				<div class="overlay-text">beach walk</div>
+			</div>
+			<!--IMAGE 7 CONTAINER-->
+			<div onclick="loadImageFromGallery(7);currentImg(7)" class="gallery-item">			
+				<img class="gallery-img" src="images/backstage/7.jpg" alt="late night snacks"/>
+				<div class="overlay-text">late night snacks</div>
+			</div>
+		</div>
+		<!--MODAL WINDOW-->
+		<div id="modal-window" class="modal-win">
+			<div class="modal-content">
+				<!--IMAGES-->
+				<div class="lightbox">
+					<img src="images/backstage/1.jpg"/>
+				</div>
+				<div class="lightbox">
+					<img src="images/backstage/2.jpg"/>
+				</div>
+				<div class="lightbox">
+					<img src="images/backstage/3.jpg">
+				</div>
+				<div class="lightbox">
+					<img src="images/backstage/4.jpg"/>
+				</div>
+				<div class="lightbox">
+					<img src="images/backstage/5.jpg"/>
+				</div>
+				<div class="lightbox">
+					<img src="images/backstage/6.jpg"/>
+				</div>
+				<div class="lightbox">
+					<img src="images/backstage/7.jpg"/>
+				</div>
+				<!--BUTTONS-->
+				<a class="prev-img" onclick="viewNextImg(-1)">&#10094;</a>
+    			<a class="next-img" onclick="viewNextImg(1)">&#10095;</a>
+			</div>
+		</div>
+	<script src="script.js"></script> 	<!--CONNECT TO JAVASCRIPT FILE-->
+	</body>
+	<footer></footer>
+</html>
